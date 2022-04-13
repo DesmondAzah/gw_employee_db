@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  gw_employee_db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8004"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor/
+    command: php -S gw_employee_db:8004 public/index.php
+    restart: always
