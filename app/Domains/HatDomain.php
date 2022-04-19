@@ -48,6 +48,17 @@ class HatDomain extends Domain {
     public static function hattingChart(){
         return (new HatDomain)->internalRequest('GET', "/hattingChart");
     }
+    public static function hattingTable(){
+        return (new HatDomain)->internalRequest('GET', "/hattingTable");
+    }
+
+    public static function completeHat() {
+        return (new HatDomain)->internalRequest('GET', "/hats/completeHat");
+    }
+
+    public static function addCompleteHat($request) {
+        return (new HatDomain)->internalRequest('POST', "/hats/create", $request);
+    }
 
     // Hat level specific methods
 

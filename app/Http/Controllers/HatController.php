@@ -67,6 +67,27 @@ class HatController extends Controller {
     public function hattingChart(HatService $hatService){
         return $hatService->hattingChart();
     }
+
+    public function hattingTable(HatService $hatService){
+        return $hatService->hattingTable();
+    }
+     /**
+     * PROCESS a request to get hats
+     * @param HatService $hatService
+     * @return Illuminate\Http\Response
+     */
+    public function completeHat(HatService $hatService){
+        return $hatService->completeHat();
+    }
+    /**
+     * PROCESS a request to add complete hat
+     * @param HatService $hatService
+     * @param Request $request
+     * @return Illuminate\Http\Response
+     */
+    public function addCompleteHat(HatService $hatService){
+        return $hatService->addCompleteHat(request()->all());
+    }
     /**
      * PROCESS a request to delete a hat
      * @param HatService $hatService

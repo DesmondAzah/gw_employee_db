@@ -46,6 +46,16 @@ class HatService extends Service {
     public function hattingChart(){
         return HatDomain::hattingChart();
     }
+
+    public function hattingTable(){
+        return HatDomain::hattingTable();
+    }
+    public function completeHat() {
+        return HatDomain::completeHat();
+    }
+    public function addCompleteHat($request) {
+        return HatDomain::addCompleteHat($request);
+    }
     
     public function deleteHat($id) {
         // delete hat level

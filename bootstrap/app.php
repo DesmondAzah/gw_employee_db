@@ -82,6 +82,10 @@ $app->configure('domains');
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+ $app->middleware([
+        App\Http\Middleware\CorsSetup::class
+ ]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers

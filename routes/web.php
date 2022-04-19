@@ -37,29 +37,36 @@ $router->put('/personnelDetails/{id}', 'PersonnelController@updatePersonnelDetai
 
 //  // Hat Routes
   $router->get('/hats', 'HatController@getHats');
-  $router->get('/hats/{id}', 'HatController@getHat');
   $router->post('/hats', 'HatController@addHat');  
-  $router->put('/hats/{id}', 'HatController@updateHat');
-  //$router->get('/hats/getHatChart', 'HatController@getOrgChart');
 
+
+  $router->post('/hats/create', 'HatController@addCompleteHat');
   $router->post('/hats/setUpPc', 'HatController@setUpHatPC');
   $router->post('/hats/setUpLR', 'HatController@setUpHatLR');
   $router->post('/hats/setUpPersonnel', 'HatController@setUpPersonnel');
+  $router->get('/hats/completeHat', 'HatController@completeHat');
+
+
+  $router->get('/hats/{id}', 'HatController@getHat');
+  $router->put('/hats/{id}', 'HatController@updateHat');
+  //$router->get('/hats/getHatChart', 'HatController@getOrgChart');
+
+
 //  $router->delete('/hats/{id}', 'HatController@deleteHat');
  
 //  // Hat Level Routes
  
   $router->get('/hatlevels', 'HatLevelController@getHatLevels');
-  $router->get('/hatlevels/{id}', 'HatLevelController@getHatLevel');
   $router->post('/hatlevels', 'HatLevelController@addHatLevel');
+  $router->get('/hatlevels/{id}', 'HatLevelController@getHatLevel');
   $router->put('/hatlevels/{id}', 'HatLevelController@updateHatLevel');
   $router->delete('/hatlevels/{id}', 'HatLevelController@deleteHatLevel');
  
 //  // Hat Rank Routes
  
   $router->get('/hatranks', 'HatRankController@getHatRanks');
-  $router->get('/hatranks/{id}', 'HatRankController@getHatRank');
   $router->post('/hatranks', 'HatRankController@addHatRank');
+  $router->get('/hatranks/{id}', 'HatRankController@getHatRank');
   $router->put('/hatranks/{id}', 'HatRankController@updateHatRank');
   $router->delete('/hatranks/{id}', 'HatRankController@deleteHatRank');
  
@@ -67,3 +74,4 @@ $router->put('/personnelDetails/{id}', 'PersonnelController@updatePersonnelDetai
 //  // Hatting Chart
  
   $router->get('/hattingChart', 'HatController@hattingChart');
+  $router->get('/hattingTable', 'HatController@hattingTable');
