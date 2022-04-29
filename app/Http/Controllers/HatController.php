@@ -88,6 +88,17 @@ class HatController extends Controller {
     public function addCompleteHat(HatService $hatService){
         return $hatService->addCompleteHat(request()->all());
     }
+
+      /**
+     * PROCESS a request to add complete hat
+     * @param HatService $hatService
+     * @param $id
+     * @param Request $request
+     * @return Illuminate\Http\Response
+     */
+    public function updateCompleteHat($id, HatService $hatService){
+        return $hatService->updateCompleteHat($id,request()->all());
+    }
     /**
      * PROCESS a request to delete a hat
      * @param HatService $hatService
@@ -106,6 +117,15 @@ class HatController extends Controller {
 
     public function deleteHatPC(){
 
+    }
+/**
+     * PROCESS a request to delete a hat assignment 
+     * @param HatService $hatService
+     * @param $id 
+     * @return Illuminate\Http\Response
+     */
+    public function deletePersonnelHats($id,HatService $hatService){
+        return $hatService->deletePersonnelHats($id);
     }
 
     /**
@@ -128,6 +148,25 @@ class HatController extends Controller {
         return $hatService->getHats();
     }
 
+/**
+     * PROCESS a request to get all hat details
+     * @param HatService $hatService
+     * * @param  $id
+     * @return Illuminate\Http\Response
+     */
+
+    public function getHatDetails(HatService $hatService, $id){
+        return $hatService->getHatDetails($id);
+    }
+    /**
+     * PROCESS a request to get all hats
+     * @param HatService $hatService
+     * @return Illuminate\Http\Response
+     */
+
+    public function getAllHats(HatService $hatService){
+        return $hatService->getAllHats();
+    }
 
 
 }

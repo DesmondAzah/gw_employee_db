@@ -56,9 +56,24 @@ class HatService extends Service {
     public function addCompleteHat($request) {
         return HatDomain::addCompleteHat($request);
     }
+    public function updateCompleteHat($id,$request) {
+        return HatDomain::updateCompleteHat($id,$request);
+    }
     
     public function deleteHat($id) {
         // delete hat level
         return HatDomain::deleteHat($id);
+    }
+
+    public function deletePersonnelHats($id){
+        error_log($id);
+        return HatDomain::deletePersonnelHats($id);
+    }
+    public function getHatDetails($id) {
+        return HatDomain::getHatDetails($id);
+    }
+    public function getAllHats() {
+        // get all hat levels
+        return HatDomain::getAllHats();
     }
 }

@@ -46,9 +46,10 @@ $router->put('/personnelDetails/{id}', 'PersonnelController@updatePersonnelDetai
   $router->post('/hats/setUpPersonnel', 'HatController@setUpPersonnel');
   $router->get('/hats/completeHat', 'HatController@completeHat');
 
-
+  $router->put('/hats/update/{id}', 'HatController@updateCompleteHat');
   $router->get('/hats/{id}', 'HatController@getHat');
   $router->put('/hats/{id}', 'HatController@updateHat');
+  $router->delete('/hats/personnelHats/{id}', 'HatController@deletePersonnelHats');
   //$router->get('/hats/getHatChart', 'HatController@getOrgChart');
 
 
@@ -75,3 +76,5 @@ $router->put('/personnelDetails/{id}', 'PersonnelController@updatePersonnelDetai
  
   $router->get('/hattingChart', 'HatController@hattingChart');
   $router->get('/hattingTable', 'HatController@hattingTable');
+  $router->get('/getHatDetails/{id}', 'HatController@getHatDetails');
+  $router->get('/getAllHats', 'HatController@getAllHats');

@@ -29,6 +29,9 @@ class HatDomain extends Domain {
         return (new HatDomain)->internalRequest('DELETE', "/$id/hat");
     }
 
+    public static function deletePersonnelHats($id) {
+        return(new HatDomain)->internalRequest('DELETE', "/hats/personnelHats/{$id}");
+    }
     public static function addHatLevelRank($hatLevelRank) {
         return (new HatDomain)->internalRequest('POST', "/hats/setUpLR", $hatLevelRank);
     }
@@ -58,6 +61,10 @@ class HatDomain extends Domain {
 
     public static function addCompleteHat($request) {
         return (new HatDomain)->internalRequest('POST', "/hats/create", $request);
+    }
+
+    public static function updateCompleteHat($id,$request) {
+        return (new HatDomain)->internalRequest('PUT', "/hats/update/{$id}", $request);
     }
 
     // Hat level specific methods
@@ -102,5 +109,11 @@ class HatDomain extends Domain {
 
     public static function deleteHatRank($id) {
         return (new HatDomain)->internalRequest('DELETE', "/hatranks/{$id}");
+    }
+    public static function getHatDetails($id) {
+        return (new HatDomain)->internalRequest('GET', "/hatDetails/{$id}");
+    }
+    public static function getAllHats() {
+        return (new HatDomain)->internalRequest('GET', "/getAllHats");
     }
 }
