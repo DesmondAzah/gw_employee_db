@@ -13,7 +13,6 @@ class HatDomain extends Domain {
         return (new HatDomain)->internalRequest('GET', "/hats");
     }
     public static function getHat($id){
-        error_log("HatDomain::getHat($id)");
         return (new HatDomain)->internalRequest('GET', "/hats/{$id}");
     }
 
@@ -49,22 +48,22 @@ class HatDomain extends Domain {
     }
 
     public static function hattingChart(){
-        return (new HatDomain)->internalRequest('GET', "/hattingChart");
+        return (new HatDomain)->internalRequest('GET', "/setupHat/hatChart");
     }
     public static function hattingTable(){
-        return (new HatDomain)->internalRequest('GET', "/hattingTable");
+        return (new HatDomain)->internalRequest('GET', "/setupHat/hatTable");
     }
 
     public static function completeHat() {
-        return (new HatDomain)->internalRequest('GET', "/hats/completeHat");
+        return (new HatDomain)->internalRequest('GET', "/setupHat");
     }
 
     public static function addCompleteHat($request) {
-        return (new HatDomain)->internalRequest('POST', "/hats/create", $request);
+        return (new HatDomain)->internalRequest('POST', "/setupHat", $request);
     }
 
     public static function updateCompleteHat($id,$request) {
-        return (new HatDomain)->internalRequest('PUT', "/hats/update/{$id}", $request);
+        return (new HatDomain)->internalRequest('PUT', "/setupHat/{$id}", $request);
     }
 
     // Hat level specific methods
